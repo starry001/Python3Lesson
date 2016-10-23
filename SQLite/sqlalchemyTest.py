@@ -27,7 +27,7 @@ DBSession = sessionmaker(bind=engine)
 
 ##关键是获取session，然后把对象添加到session，最后提交并关闭。DBSession对象可视为当前数据库连接。
 session = DBSession()
-new_user = User(id='5', name='starry5')
+new_user = User(id='6', name='starry5')
 session.add(new_user)
 session.commit()
 session.close()
