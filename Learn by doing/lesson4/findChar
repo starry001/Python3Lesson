@@ -1,0 +1,23 @@
+'字符识别'
+import string
+
+text = open('mess.txt').read()
+
+def my_solution(text):
+    """从text中挑选出属于英文字母的字符"""
+
+    s = filter(lambda x: x in string.letters, text)
+    print(s)
+
+if __name__ == '__main__':
+    my_solution(text)
+
+
+s = ''.join([line.rstrip() for line in open('mess.txt')])
+occ = {}
+
+for c in s:
+    occ[c] = occ.get(c, 0) + 1  # 相同的字符，字典的值加1
+    avgOC = len(s) // len(occ)
+
+print (''.join([c for c in s if occ[c] < avgOC]))
