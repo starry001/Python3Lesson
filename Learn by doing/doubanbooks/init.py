@@ -62,24 +62,24 @@ for book in book_info_list:
 def save():
     today = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d')
     file_name = '豆瓣' + today + '推荐书单'
-    with open(file_name + '.md', 'w') as file:
+    with open(file_name + '.md', 'w', encoding='utf-8') as file:
         file.write('#' + file_name)
-        file.write('\\n---')
-    with open(file_name + '.md', 'a') as file:
+        file.write('\n---')
+    with open(file_name + '.md', 'a', encoding='utf-8') as file:
         num = 1
         for book in book_info_list:
-            file.write('\\n\\n')
+            file.write('\n')
             file.write('## ' + str(num) + '. ' + book.title)
-            file.write('\\n')
+            file.write('\n')
             file.write('![' + book.title + ' cover img](' + book.img + ')')
-            file.write('\\n\\n')
-            file.write('简介\\n')
-            file.write('---\\n')
+            file.write('\n')
+            file.write('简介\n')
+            file.write('---\n')
             file.write(book.abstract)
-            file.write('\\n\\n')
-            file.write('作者:     ' + book.author + '\\n\\n')
-            file.write('出版时间: ' + book.year + '\\n\\n')
-            file.write('出版社:   ' + book.publisher + '\\n\\n')
+            file.write('\n')
+            file.write('作者:     ' + book.author + '\n')
+            file.write('出版时间: ' + book.year + '\n')
+            file.write('出版社:   ' + book.publisher + '\n')
             file.write('[更多...](' + book.link + ')')
             num = num + 1
 
