@@ -76,3 +76,4 @@ with request.urlopen(req, data=login_data.encode('utf-8')) as f:
     for k, v in f.getheaders():
         print(k, v)
     print(resp.decode('utf-8'))
+
